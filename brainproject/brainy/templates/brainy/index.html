@@ -1,0 +1,192 @@
+{% extends 'brainy/base.html' %}
+{% load static %}
+
+{% block title %}Login - Brainy{% endblock %}
+
+{% block content %}
+
+<div class="container mx-auto">
+    
+    <!-- Hero Section -->
+  <section class="bg-cover bg-center h-screen text-white flex flex-col justify-center items-center" style="background-image: url('{% static 'brainy/accuell.jpg' %}'); background-color: #040c1a; opacity: 0.9;">
+    <div class="bg-navColor2 bg-opacity-50 w-full h-full flex flex-col justify-center items-center">
+      <h1 class="text-4xl md:text-6xl font-bold">Classify Your MRI Images with AI</h1>
+      <p class="mt-4 text-xl md:text-2xl">Accurate, Fast, and Secure MRI Image Classification</p>
+      <a href="{% url 'majority' %}" class="mt-8 bg-[#404040] hover:bg-[#404040] text-iwhite font-bold py-3 px-6 rounded">Upload MRI Image</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class=" py-16">
+    <div class="container mx-auto text-center">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-[#404040] p-8 rounded shadow">
+          <h2 class="text-2xl font-bold mb-4 text-white">AI-Powered Accuracy</h2>
+          <p class="text-gray-300">Our AI technology ensures precise MRI image classification.</p>
+        </div>
+        <div class="bg-[#404040] p-8 rounded shadow">
+          <h2 class="text-2xl font-bold mb-4 text-white">Speed and Efficiency</h2>
+          <p class="text-gray-300">Get your results quickly and efficiently.</p>
+        </div>
+        <div class="bg-[#404040] p-8 rounded shadow">
+          <h2 class="text-2xl font-bold mb-4 text-white">Security and Privacy</h2>
+          <p class="text-gray-300">Your data is handled with the utmost security and privacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="bg-[#404040] text-3xl font-bold mb-8 text-white">How It Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-[#404040] p-8 rounded shadow">
+          <h3 class="text-2xl font-bold mb-4 text-white">Step 1: Upload Image</h3>
+          <p class="text-gray-300">Select and upload your MRI image.</p>
+        </div>
+        <div class="bg-[#404040] p-8 rounded shadow">
+          <h3 class="text-2xl font-bold mb-4 text-white">Step 2: AI Analysis</h3>
+          <p class="text-gray-300">Our AI analyzes the image for classification.</p>
+        </div>
+        <div class="bg-[#404040] p-8 rounded shadow">
+          <h3 class="text-2xl font-bold mb-4 text-white">Step 3: Receive Results</h3>
+          <p class="text-gray-300">Get the results of the classification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="w-full h-screen flex relative">
+    <div class="flex-1 w-1/3">
+      <div class="w-full h-full flex justify-center items-center text-white">
+        <h1 id="typewriter" class="text-4xl font-bold"></h1>
+    </div>
+
+    </div>
+    <div class="flex-1 w-2/3 flex ">
+        <img src="{% static 'brainy/brain.gif' %}" alt="" class="m-auto border-2 border-ilightblue rounded-3xl scale-125 opacity-95">
+    </div>
+</div>
+<section id="features" class="container mx-auto px-4 space-y-6  py-8 md:py-12 lg:py-20 text-white">
+
+  <div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center ">
+
+      <h2 class="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">TECHNOLOGIES</h2>
+
+      <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+        Powerful technologies drive this website, ensuring a seamless and efficient experience for our users. We stay at the forefront of technological advancements, continuously innovating to deliver a future-proof platform that adapts to evolving user needs.
+      </p>
+
+  </div>
+
+  <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+
+      <div
+          class="relative overflow-hidden rounded-lg border bg-[#404040] select-none hover:shadow hover:shadow-teal-200 p-2">
+          <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+              <img src="{% static 'brainy/django.svg' %}" alt="" class="h-16 w-16 fill-current"  >
+              <div class="space-y-2">
+                  <h3 class="font-bold">Django</h3>
+                  <p class="text-sm text-muted-foreground">Web framework that helps you build powerful and secure web applications</p>
+              </div>
+          </div>
+      </div>
+
+      <div
+          class="relative overflow-hidden rounded-lg border bg-[#404040] select-none hover:shadow hover:shadow-teal-200 p-2">
+          <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+              <svg viewBox="0 0 24 24" class="h-12 w-12 fill-current">
+                  <path
+                      d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z">
+                  </path>
+              </svg>
+             
+              
+              <div class="space-y-2">
+                  <h3 class="font-bold">Components</h3>
+                  <p class="text-sm text-muted-foreground">UI components built using Radix UI and styled with Tailwind
+                      CSS.</p>
+              </div>
+          </div>
+      </div>
+
+      <div
+          class="relative overflow-hidden rounded-lg border bg-[#404040] select-none hover:shadow hover:shadow-teal-200 p-2">
+          <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+            <img src="{% static 'brainy/sqlite copy.png' %}" alt="" class="h-14 w-28 fill-current"  >
+              <div class="space-y-2">
+                  <h3 class="font-bold">SQLite</h3>
+                  <p class="text-sm text-muted-foreground">tiny powerful and flexible solution for managing data </p>
+              </div>
+          </div>
+      </div>
+      <div
+      class="relative overflow-hidden rounded-lg border bg-[#404040] select-none hover:shadow hover:shadow-teal-200 p-2">
+      <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+        <img src="{% static 'brainy/tf.png' %}" alt="" class="w-28 h-14 fill-current"  >
+          <div class="space-y-2">
+              <h3 class="font-bold">Tensorflow</h3>
+              <p class="text-sm text-muted-foreground">open-source framework for building and training machine learning models </p>
+          </div>
+        </div>
+      </div>
+      <div
+          class="relative overflow-hidden rounded-lg border bg-[#404040] select-none hover:shadow hover:shadow-teal-200 p-2">
+          <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+            <img src="{% static 'brainy/keras.png' %}" alt="" class="h-16 w-32 fill-current"  >
+              <div class="space-y-2">
+                  <h3 class="font-bold">Keras</h3>
+                  <p class="text-sm text-muted-foreground">high-level neural network API </p>
+              </div>
+          </div>
+      </div>
+      <div
+          class="relative overflow-hidden rounded-lg border bg-[#404040] select-none hover:shadow hover:shadow-teal-200 p-2">
+          <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+            <img src="{% static 'brainy/opencv.png' %}" alt="" class="h-20 w-16 fill-current"  >
+              <div class="space-y-2">
+                  <h3 class="font-bold">OpenCV</h3>
+                  <p class="text-sm text-muted-foreground"> open-source library for real-time computer vision tasks </p>
+              </div>
+          </div>
+      </div>
+
+      
+
+      
+  </div>
+
+</section>
+<script>
+  const words = ["Hope is a powerful weapon. With hope, you can overcome anything.", "The bravest thing we can do is still to love the world, knowing the truth of it.", "ou have the power to heal your life, and you have the responsibility to do so."];
+  let i = 0;
+  let j = 0;
+  let currentWord = "";
+  let isDeleting = false;
+  
+  function type() {
+    currentWord = words[i];
+    if (isDeleting) {
+      document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
+      j--;
+      if (j == 0) {
+        isDeleting = false;
+        i++;
+        if (i == words.length) {
+          i = 0;
+        }
+      }
+    } else {
+      document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
+      j++;
+      if (j == currentWord.length) {
+        isDeleting = true;
+      }
+    }
+    setTimeout(type, 130);
+  }
+  
+  type();
+  </script>
+{% endblock%}

@@ -1,0 +1,46 @@
+{% extends 'brainy/base.html' %}
+{% load static %}
+
+{% block title %}{{scan.patient}} History {% endblock title %}
+
+{% block main-content %}
+<div class="bg-gray-100 flex justify-center items-center h-full rounded-lg">
+
+    <div class="max-w-7xl mx-auto py-8 w-full h-full ">
+        <h2 class="text-2xl font-bold mb-4 ">Scan History</h2>
+        <div class="overflow-x-auto ">
+            <table class="w-full bg-white shadow-md rounded-lg divide-y divide-gray-200 ">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">MRI</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Result</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">EfficientNetB1</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">EfficientNetB1 LSTM</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IcneptionV3</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Renset</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">VGG16</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    {% for scan in Hscans %}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap"><img src="{{ scan.mri.url }}" alt="MRI Image" class="w-5 h-5 object-cover rounded "style="width:6rem;height:6rem;"></td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.date }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.get_predicted_result_label }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.Model1 }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.Model2 }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.Model3 }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.Model4 }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.Model5 }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ scan.profile }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
+{% endblock main-content %}
