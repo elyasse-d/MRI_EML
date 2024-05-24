@@ -14,5 +14,5 @@ urlpatterns = [
    path('logout/', views.custom_logout_view, name='logout'),
    path("majority/", views.Majority.as_view(), name="majority"),
    path("HistoryScan/", views.HistoryScan.as_view(), name="HistoryScan"),
-   path("init/", views.achivmenet, name="home"),
+   path("init/", views.achivmenet, name="unlock"),
 ]

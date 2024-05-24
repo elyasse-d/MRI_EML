@@ -31,18 +31,18 @@
                     <li><a href="{% url 'profile' %}" class="hover:underline">Profile</a></li>
                     <li>
                       <li><a href="{% url 'edit_profile' %}" class="hover:underline">Edit profil</a></li>
-                        <a href="{% url 'logout' %}" class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite bg-igreen border-iblue mt-4 lg:mt-0 ">
-                            <span class="text-iwhite text-reg font-helvetica ">Loguot</span>
+                        <a href="{% url 'logout' %}" class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite hover:bg-ired border-iblue hover:border-ired  mt-4 lg:mt-0 ">
+                            <span class="text-iwhite text-reg font-helvetica ">Logout</span>
                         </a>
                     </li>
                     {% else %}
                     <li>
-                        <a href="{% url 'signup' %}" class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite bg-igreen border-iblue mt-4 lg:mt-0 ">
+                        <a href="{% url 'signup' %}" class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite hover:bg-iblue border-iblue mt-4 lg:mt-0 ">
                             <span class="text-iwhite text-reg font-helvetica ">signup</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{% url 'login' %}" class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite bg-igreen border-iblue mt-4 lg:mt-0 ">
+                        <a href="{% url 'login' %}" class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite hover:bg-iblue border-iblue mt-4 lg:mt-0 ">
                             <span class="text-iwhite text-reg font-helvetica ">Login</span>
                         </a>
                     </li>
@@ -70,7 +70,9 @@
                         <img src="{% static 'brainy/Vector.png'%}" class="mx-auto px-2">   
                             Brainy
                         </a>
-                        <img src="{% static 'brainy/umi.png'%}" class="mx-auto px-2 w-44 h-16 px-4"> 
+                        <a href="{% url 'unlock' %}">
+                          <img src="{% static 'brainy/umi.png'%}" class="mx-auto px-2 w-44 h-16 px-4"> 
+                        </a>
                 </div>
                 </div>
                 </div>
@@ -80,7 +82,7 @@
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  class="text-iblue transition hover:text-iblue/75"
+                  class="text-iwhite transition hover:text-iblue/75"
                 >
                   <span class="sr-only">Facebook</span>
                   <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -98,7 +100,7 @@
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  class="text-iblue transition hover:text-iblue/75"
+                  class="text-iwhite transition hover:text-iblue/75"
                 >
                   <span class="sr-only">Instagram</span>
                   <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -116,7 +118,7 @@
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  class="text-iblue transition hover:text-iblue/75"
+                  class="text-iwhite transition hover:text-iblue/75"
                 >
                   <span class="sr-only">Twitter</span>
                   <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -132,7 +134,7 @@
                   href="#"
                   rel="noreferrer"
                   target="_blank"
-                  class="text-iblue transition hover:text-iblue/75"
+                  class="text-iwhite transition hover:text-iblue/75"
                 >
                   <span class="sr-only">GitHub</span>
                   <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

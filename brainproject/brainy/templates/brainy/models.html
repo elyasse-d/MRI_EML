@@ -37,6 +37,12 @@ Copy code
             <a class="cursor-pointer text-center cursor-pointer rounded-md bg-gray-300 py-2 px-4 hover:bg-gray-400" id="retryUpload">Upload Image</a>
         </div>
     </div>
+    <div id="loadingSpinner" class="hidden mt-4 text-center">
+        <svg class="animate-spin h-5 w-5 text-ired" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+    </div>
 </div>
 </div>
 <script>
@@ -55,10 +61,11 @@ Copy code
     // Event listener for form submission
     document.getElementById('predictionForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission behavior
-
+        
+        const loadingSpinner = document.getElementById('loadingSpinner');
         const formData = new FormData();
         const fileField = document.getElementById('upload').files[0];
-
+        loadingSpinner.classList.remove('hidden');
         if (!fileField) {
             alert("Please upload an image.");
             return;
@@ -79,6 +86,7 @@ Copy code
             if (data.error) {
                 alert(data.error);
             } else {
+                loadingSpinner.classList.add('hidden');
                 displayResults(data);
                 document.getElementById('main').classList.add('flex-shrink-0'); // Fix width issue
                 document.getElementById('main').classList.remove('w-2/6'); // Remove original width
@@ -87,6 +95,7 @@ Copy code
             }
         })
         .catch(error => console.error('Error:', error));
+        loadingSpinner.classList.add('hidden');
     });
 
     // Function to get CSRF token from cookies
